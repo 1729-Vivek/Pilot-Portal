@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Drones Pilot Portal</title>
+    <script>
+        var link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.head.appendChild(link);
+        }
+        link.href = 'https://i.imgur.com/4KBcfHV.png'; 
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 0 20px;
+        }
+
+        .form1,
+        .form2 {
+            position: relative;
+            flex: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 50px; /* Increased padding */
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form1 {
+            margin-top: 50px;
+        }
+
+        .form2 {
+            margin-top: 100px;
+            background-color: #5C5992;
+            color: #fff;
+        }
+
+        .pilotportal,
+        .hellopilot {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px; /* Increased font size */
+            line-height: 1.2;
+        }
+
+        .pilotportal {
+            color: #5C5992;
+        }
+
+        .hellopilot {
+            line-height: 2.5; /* Increased line-height */
+        }
+
+        .paragraph {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-style: normal;
+            font-weight: 100;
+            font-size: 18px; /* Increased font size */
+            line-height: 24px;
+            text-align: center;
+            margin-bottom: 1em;
+            margin-top: 15px; /* Added margin */
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            padding: 15px; /* Increased padding */
+            margin-bottom: 15px; /* Increased margin-bottom */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: rgba(217, 217, 217, 0.17);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px; /* Increased font size */
+            color: #7F8685;
+        }
+
+        .signin,
+        .signup {
+            display: inline-block;
+            padding: 12px 20px; /* Increased padding */
+            background-color: #5C5992;
+            color: white;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            box-sizing: border-box;
+            width: 180px; /* Increased width */
+            border: 3px solid #F5F5F5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px; /* Increased font size */
+        }
+
+        .signup {
+            margin-top: 30px; /* Increased margin-top */
+        }
+
+        .logo {
+            width: 90px; /* Increased width */
+            height: 90px; /* Increased height */
+            background-image: url('https://i.imgur.com/gj6MjHB.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .form1,
+            .form2 {
+                margin-top: 50px;
+                max-width: 80%;
+                padding: 30px; /* Adjusted padding */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form class="form2" action="/login">
+            <div class="logo"></div>
+            <div class="hellopilot">
+                WELCOME BACK!
+            </div>
+            <div class="paragraph">
+                <p>In order to access and view your pilot profile, kindly proceed with the login process</p>
+            </div>
+            <button class="signin" type="submit">SIGN IN</button>
+        </form>
+        <form class="form1" action="/signup" method="POST">
+            <div class="pilotportal">
+                Create Account
+            </div>
+            <input type="text" placeholder="Name" name="name" id="name" required>
+            <input type="email" placeholder="Email Id" name="emailid" id="emailid" required>
+            <input type="tel" placeholder="Mobile Number" name="phone_number" id="phone_number" required>
+            <input type="password" placeholder="Password" name="password" id="password" required>
+            <input type="password" placeholder="Confirm Password" name="cpassword" id="cpassword" required>
+            <button class="signup" type="submit" onclick="checkpassword()">SIGN UP</button>
+        </form>
+    </div>
+</body>
+</html>
